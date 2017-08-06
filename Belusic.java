@@ -19,7 +19,7 @@ public class Belusic {
 	}
 	//displays the states of the various components of the system
 	//Brake,Temperature, headLight and Fuel parameters need to be added when created
-	public static void displayStates(Indicator Li,Indicator Ri){
+	public static void displayStates(Indicator Li,Indicator Ri,engineTemp temp){
 		System.out.println("Brake light: ");
 		/*if(brake.isOn()){System.out.println("on");} else {System.out.println("off");}
 		System.out.print("Right indicator: ");*/
@@ -31,24 +31,26 @@ public class Belusic {
 		System.out.print("Right indicator: ");
 		if(Ri.isOn()){System.out.println("Flashing");} else {System.out.println("off");}
 		
-		System.out.println("Head lights: ");
+		System.out.print("Head lights: ");
 		/*if(HighBeam.isOn()){System.out.println("High Beam");} else {System.out.println("Low Beam");}
 		*/
 		
-		System.out.println("Temperature level: ");
+		System.out.print("Temperature level: ");
 		//System.out.println(temp.getlevel());
-		/*if(temp.isHigh()){System.out.println("warning light on");} else {System.out.println("warning light off");}
-		
+		if(temp.isHigh()){System.out.println("warning light on");} else {System.out.println("warning light off");}
+		/*
 		*etc.
 		*/
 	}
 
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
-		String input;
+		String input="";
 		//initialise indicators both off to start with
 		Indicator indRight=new RIndicator();
 		Indicator indLeft=new LIndicator();
+		engineTemp temp=new engineTemp();
+		Scanner sc = new Scanner(System.in);
 		/* declarations for Temperature, Headlight(Hi/low beams), BrakeLights, Fuel level/warning go here 
 		 * For example:
 		 * Brakes brake=new Brakes();
@@ -57,14 +59,17 @@ public class Belusic {
 		 * Fuel fuel= new Fuel();
 		 */
 		//initialise scanner to accept input
-		Scanner sc = new Scanner(System.in);
+		
 		//loop to read input from scanner and display system state
 		do
 		{
 			displayMenu();
 			
-		     input=sc.next();
-		     input=input.toLowerCase();
+			input=sc.next();
+			input=input.toLowerCase();	 
+			 
+		     
+		     
 		     
 			
 			switch(input)
@@ -79,7 +84,7 @@ public class Belusic {
 				case "r": indLeft.setOn(false);indRight.toggle();
 				break;
 				//code 
-				case "t":/*replace this with code to  input and display temp*/System.out.print("Checking Temperature") ;
+				case "t":temp.setTemp(sc);
 				break;
 				case "h": /*replace this with code to toggle headlights*/System.out.print("Toggling headlights");
 				break;
@@ -90,8 +95,9 @@ public class Belusic {
 				default: System.out.println("invalid input");
 				break;
 			}
+			
 		   //display current system state
-			displayStates(indLeft,indRight);
+			displayStates(indLeft,indRight,temp);
 			
 		} while(!input.equals("q"));
 		sc.close();
