@@ -19,7 +19,8 @@ public class Belusic {
 	}
 	//displays the states of the various components of the system
 	//Brake,Temperature, headLight and Fuel parameters need to be added when created
-	public static void displayStates(Indicator Li,Indicator Ri,engineTemp temp){
+	public static void displayStates(Indicator Li,Indicator Ri,EngineTemp temp){
+		System.out.println("*****System State:*****");
 		System.out.println("Brake light: ");
 		/*if(brake.isOn()){System.out.println("on");} else {System.out.println("off");}
 		System.out.print("Right indicator: ");*/
@@ -31,7 +32,7 @@ public class Belusic {
 		System.out.print("Right indicator: ");
 		if(Ri.isOn()){System.out.println("Flashing");} else {System.out.println("off");}
 		
-		System.out.print("Head lights: ");
+		System.out.println("Head lights: ");
 		/*if(HighBeam.isOn()){System.out.println("High Beam");} else {System.out.println("Low Beam");}
 		*/
 		
@@ -50,7 +51,7 @@ public class Belusic {
 		Indicator indRight=new RIndicator();
 		Indicator indLeft=new LIndicator();
 		//intitialise engine temp object
-		engineTemp temp=new engineTemp();
+		EngineTemp temp=new EngineTemp();
 		Scanner sc = new Scanner(System.in);
 		/* declarations for Temperature, Headlight(Hi/low beams), BrakeLights, Fuel level/warning go here 
 		 * For example:
