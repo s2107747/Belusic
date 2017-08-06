@@ -49,6 +49,7 @@ public class Belusic {
 		//initialise indicators both off to start with
 		Indicator indRight=new RIndicator();
 		Indicator indLeft=new LIndicator();
+		//intitialise engine temp object
 		engineTemp temp=new engineTemp();
 		Scanner sc = new Scanner(System.in);
 		/* declarations for Temperature, Headlight(Hi/low beams), BrakeLights, Fuel level/warning go here 
@@ -83,7 +84,8 @@ public class Belusic {
 				//indicate Right. Set right indicator off. toggle Right indicator(also displays flashing indicator)
 				case "r": indLeft.setOn(false);indRight.toggle();
 				break;
-				//code 
+				//code to set engine temp when t is selected
+				//neccessary to pass scanner as a parameter, as opening a new one in enginetemp class caused problems for some reason
 				case "t":temp.setTemp(sc);
 				break;
 				case "h": /*replace this with code to toggle headlights*/System.out.print("Toggling headlights");
