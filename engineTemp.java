@@ -1,15 +1,22 @@
 import java.util.Scanner;
-
+// i've removed abstract from class. not neccessary
 public class engineTemp {
 	private int choice;
+	//i've added this variable do the state can be passed back to main class
 	private boolean tempHigh;
+	//initialise engine temp as low
 	public engineTemp() {
 		tempHigh=false;
 	}
-	
+	//get state of engine temp
 	public boolean isHigh(){return tempHigh;}
-    public void setTemp(Scanner in){
-    
+	
+	//code below is from edwins engine temp class. I've made it a method of the class 
+	//engineTemp.setTemp(Scanner in)
+   //neccessary to pass Scanner as parameter from main. otherwise it produced error on return to main
+	//not sure why...
+	public void setTemp(Scanner in){
+    //this code provided by edwin has not been changed, exept for removal of scanner
             do{ 
                     //Simulating Temperature input
                     System.out.println("Simulating temperature input");
