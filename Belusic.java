@@ -19,7 +19,7 @@ public class Belusic {
 	//displays the states of the various components of the system
 	//Brake,Temperature, headLight and Fuel parameters need to be added when created
 	public static void displayStates
-	(Indicator Li,Indicator Ri,EngineTemp temp, Light highBeam,FuelLevel fuel, Brakes brake)
+	(Indicator Li,Indicator Ri,EngineTemp temp, Light highBeam,fuelIndicator fuel, Brakes brake)
 	{
 		System.out.println("*****Belusic MotorCycle Electrical Control System*****");
 		System.out.println("Created by The Noble bricks Team");
@@ -42,9 +42,9 @@ public class Belusic {
 		System.out.print("Temperature level: ");
 		if(temp.isHigh()){System.out.println("warning light on");} else {System.out.println("warning light off");}
 		
-		System.out.print("Fuellevel: ");
-		if(fuel.isLow()){System.out.println("warning light on");} else {System.out.println("warning light off");}
-		
+		//System.out.print("Fuellevel: ");
+		//if(fuel.){System.out.println("warning light on");} else {System.out.println("warning light off");}
+		fuel.display();
 		System.out.println("");
 		/*
 		*etc.
@@ -65,7 +65,7 @@ public class Belusic {
 		//initialise lights
 		Light highBeam=new Light();
 		//initialics fuel
-		FuelLevel fuelCheck=new FuelLevel();
+		fuelIndicator fuelCheck=new fuelIndicator();
 		//initialise scanner to accept input
 		Scanner sc = new Scanner(System.in);
 
@@ -102,7 +102,7 @@ public class Belusic {
 				break;
 				case "h": highBeam.setBeam(sc);
 				break;
-				case "f": fuelCheck.setFuel(sc);
+				case "f": fuelCheck.toggle();
 				break;
 				case "q": System.out.print("Quitting now ");
 				break;
