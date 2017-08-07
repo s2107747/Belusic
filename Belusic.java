@@ -94,7 +94,9 @@ public class Belusic {
 			switch(input)
 			{
 				//
-				case "b":           // System.out.println("Brake light:  on now");
+				case "b":    
+					
+					// **************Thongs code below******************
                     int b1 = 0;
                     int b2 = 5;
                     
@@ -116,7 +118,9 @@ public class Belusic {
                     }
 
                     break;
-				
+				//********* end of Thongs Code*****//
+                    
+                    
 				//indicate left. Set right indicator off. toggle left indicator(also displays flashing indicator)
 				case "l": indRight.setOn(false);indLeft.toggle();
 				break;
