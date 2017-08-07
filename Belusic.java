@@ -19,7 +19,7 @@ public class Belusic {
 	//displays the states of the various components of the system
 	//Brake,Temperature, headLight and Fuel parameters need to be added when created
 	public static void displayStates
-	(Indicator Li,Indicator Ri,EngineTemp temp, Light highBeam,fuelIndicator fuel, Brakes brake)
+	(Indicator Li,Indicator Ri,EngineTemp temp, Light highBeam,fuelIndicator fuel, String brklight)
 	{
 		System.out.println("*****Belusic MotorCycle Electrical Control System*****");
 		System.out.println("Created by The Noble bricks Team");
@@ -27,7 +27,7 @@ public class Belusic {
 		System.out.println("*****System State:*****");
 		
 		System.out.print("Brake light: ");
-		if(brake.isOn()){System.out.println("on");} else {System.out.println("off");}
+		if(brklight.equals("on")){System.out.println("on");} else {System.out.println("off");}
 		
 		System.out.print("Left indicator: ");
 		if(Li.isOn()){System.out.println("Flashing");} else {System.out.println("off");}
@@ -54,10 +54,10 @@ public class Belusic {
 
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
-		String input="";
+	
 		// declarations for Temperature, Headlight(Hi/low beams), BrakeLights, Fuel level/warning go here 
 		//initialise indicators both off to start with
-		Brakes brake=new Brakes();
+		
 		Indicator indRight=new RIndicator();
 		Indicator indLeft=new LIndicator();
 		//intitialise engine temp object
@@ -66,8 +66,14 @@ public class Belusic {
 		Light highBeam=new Light();
 		//initialics fuel
 		fuelIndicator fuelCheck=new fuelIndicator();
+		//initialise brakelight variable
+		String brklight="off";
 		//initialise scanner to accept input
+		String input;
+		
 		Scanner sc = new Scanner(System.in);
+		
+		
 
 	
 		
@@ -75,7 +81,7 @@ public class Belusic {
 		do
 		{
 			 //display current system state
-			displayStates(indLeft,indRight,temp,highBeam,fuelCheck,brake);
+			displayStates(indLeft,indRight,temp,highBeam,fuelCheck,brklight);
 			displayMenu();
 			
 			input=sc.next();
@@ -88,8 +94,29 @@ public class Belusic {
 			switch(input)
 			{
 				//
-				case "b": brake.toggle();
-				break;
+				case "b":           // System.out.println("Brake light:  on now");
+                    int b1 = 0;
+                    int b2 = 5;
+                    
+                   // Scanner scan = new Scanner(System.in);
+                    System.out.print("Enter  5 = ON  and  Enter 0 = OFF   GPIO = :");
+                    int x = sc.nextInt();
+                    int xx = x;
+                    if (xx >= b2) {
+                        brklight = "ON";
+                       // System.out.println(" Now it is Braking and The brake lights is ON ");
+                        System.out.println("At this Moment Brake lights is: "+brklight);
+                    }
+                    else if (xx == b1) {
+                        brklight = "OFF";
+                       // System.out.println(" Now Bracking System is free and The brake lights is OFF ");
+                        System.out.println("At this Moment Brake lights is : "+brklight);
+                    } else {
+                        System.out.println("Please check Something may be wrong");
+                    }
+
+                    break;
+				
 				//indicate left. Set right indicator off. toggle left indicator(also displays flashing indicator)
 				case "l": indRight.setOn(false);indLeft.toggle();
 				break;
