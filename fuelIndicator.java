@@ -1,5 +1,5 @@
 
-public abstract class fuelIndicator{
+public class fuelIndicator{
 
 	private int level; 
 	private boolean status;
@@ -23,7 +23,7 @@ public abstract class fuelIndicator{
 		}
 	}
 	
-	public void display() throws InterruptedException {
+	public void display() {
 		level -= 10;
 		
 		if(level >= 0 && level <= 100) {
