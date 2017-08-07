@@ -1,8 +1,11 @@
-public abstract class engineTemp{
+import java.util.Scanner;
 
 
-        int choice;
-        Scanner in = new Scanner(System.in);
+public abstract class Enginetemp{
+
+    Scanner in = new Scanner(System.in);
+    int choice;
+        public void run() {
                 do{ 
                         //Simulating Temperature input
                         System.out.println("Simulating temperature input");
@@ -16,6 +19,6 @@ public abstract class engineTemp{
                                 System.out.println("Temperature is \033[31mhot!" + "\033[0m");
                 } while (choice !=0);   
 
-
+        }
 }
 
