@@ -27,7 +27,7 @@ public class Belusic {
 		System.out.println("*****System State:*****");
 		
 		System.out.print("Brake light: ");
-		if(brklight.equals("on")){System.out.println("on");} else {System.out.println("off");}
+		if(brklight.equals("ON")){System.out.println("on");} else {System.out.println("off");}
 		
 		System.out.print("Left indicator: ");
 		if(Li.isOn()){System.out.println("Flashing");} else {System.out.println("off");}
@@ -121,11 +121,16 @@ public class Belusic {
 				//********* end of Thongs Code*****//
                     
                     
-				//indicate left. Set right indicator off. toggle left indicator(also displays flashing indicator)
-				case "l": indRight.setOn(false);indLeft.toggle();
+				//indicate left. Set right indicator off. 
+				case "l": 
+				if(indRight.isOn()){indRight.setOn(false);}
+				else if (!indRight.isOn()&&!indLeft.isOn()){indLeft.toggle();}
 				break;
-				//indicate Right. Set right indicator off. toggle Right indicator(also displays flashing indicator)
-				case "r": indLeft.setOn(false);indRight.toggle();
+				//indicate Right. Set left indicator off. 
+				case "r":
+				if(indLeft.isOn()){indLeft.setOn(false);}
+				else if (!indLeft.isOn()&&!indRight.isOn()){indRight.toggle();}
+				
 				break;
 				//code to set engine temp when t is selected
 				//neccessary to pass scanner as a parameter, as opening a new one in enginetemp class caused problems for some reason
