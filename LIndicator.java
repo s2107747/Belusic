@@ -13,7 +13,7 @@ public class LIndicator extends Indicator {
 		{
 		colorInd="\033["+i*3+"m<-\033[0m\r";
 		//System.out.println(color);
-		System.out.print(colorInd);
+		System.out.print("\033[32m<-\033[0m\r");
 		Thread.sleep(50);
 		}
 		System.out.print("             \r");
