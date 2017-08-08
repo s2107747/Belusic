@@ -6,6 +6,7 @@ private boolean on;
 public Indicator(){
 	setOn(false);
 }
+//Test comment
 
 //Toggle indicator throws Exception neccessary to make thread sleep work
 public boolean toggle() throws InterruptedException {
