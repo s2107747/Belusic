@@ -39,7 +39,7 @@ public class EngineTemp {
 		    System.out.println("Temperature checking...");
                     if (choice >=1 && choice <=20){
                             System.out.println("Temperature is \033[34mCOLD!" + "\033[0m");
-                    		tempHigh=false;}
+                    		tempHigh=true;}
 		    else if (choice >=21 && choice <=80){
 			    System.out.println("Temperature is \033[32mNORMAL!" + "\033[0m");
 			     	tempHigh=false;}
