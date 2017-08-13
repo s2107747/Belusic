@@ -3,6 +3,8 @@
 // Student ID: s3590079
 // Course: CPT111
 // Date: SP2 2017
+// Filename: EngineTemp.java
+// Description: For Belusic project - MVP4 - Temperature and Warnings
 
 import java.util.Scanner;
 // i've removed abstract from class. not neccessary
