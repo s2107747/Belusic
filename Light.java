@@ -1,3 +1,11 @@
+// Team: NobleBrick
+// Name: Edwin Chow
+// Student ID: s3590079
+// Course: CPT111
+// Date: SP2 2017
+// Filename: Light.java
+// Description: For Belusic project - MVP5 - Low/High Lights 
+
 import java.util.Scanner;
 
 public class Light {
