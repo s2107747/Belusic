@@ -138,7 +138,7 @@ public class Belusic {
 				break;
 				case "h": highBeam.setBeam(sc);
 				break;
-				case "f": fuelCheck.toggle();
+				case "f": fuelCheck.showMenu();
 				break;
 				case "q": System.out.print("Quitting now ");
 				break;
