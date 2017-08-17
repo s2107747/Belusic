@@ -6,13 +6,11 @@ public class RIndicator extends Indicator {
 	}
 
 	@Override
-	public void display() throws InterruptedException {
-		System.out.print("->\r");
-		Thread.sleep(500);
-		System.out.print("   \r");
-		Thread.sleep(500);
-		
+	public void output(){
+		//out put flashing indicator to console.
+		//this method could be modified in future to output to gpio
+			System.out.print("->\r");
+			
 
 	}
-
 }

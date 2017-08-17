@@ -3,12 +3,12 @@
 import java.util.Scanner;
 
 public class Belusic {
-	//displays console menu
+	//displays console menu. 
 	public static void displayMenu(){
 		System.out.println("*****Belusic Control System Menu*****");
 		System.out.println("b) Brake (Toggle Brake lights)");
-		System.out.println("l) Indicate Left");
-		System.out.println("r) Indicate Right");
+		System.out.println("l) Indicate Left (Toggle left indicator on/off)");
+		System.out.println("r) Indicate Right (Toggle Right indicator on/off)");
 		System.out.println("t) Engine Temperature");
 		System.out.println("h) Headlights (Toggle high/low beams)");
 		System.out.println("f) Fuel level");
@@ -123,13 +123,14 @@ public class Belusic {
                     
 				//indicate left. Set right indicator off. 
 				case "l": 
+				
 				if(indRight.isOn()){indRight.setOn(false);}
-				else if (!indRight.isOn()&&!indLeft.isOn()){indLeft.toggle();}
+				indLeft.toggle();
 				break;
 				//indicate Right. Set left indicator off. 
 				case "r":
 				if(indLeft.isOn()){indLeft.setOn(false);}
-				else if (!indLeft.isOn()&&!indRight.isOn()){indRight.toggle();}
+				indRight.toggle();
 				
 				break;
 				//code to set engine temp when t is selected

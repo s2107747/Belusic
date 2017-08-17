@@ -11,13 +11,10 @@ public Indicator(){
 //Toggle indicator throws Exception neccessary to make thread sleep work
 public boolean toggle() throws InterruptedException {
 	on=!on;
-	//if indicators are turned on, displays flashing arrow
-	if(on){
-     int i;
-     for (i=0;i<10;i++){
+	//display indicator state
+	
     	this.display(); 
-     }
-	}
+   
 	return on;
 }
 
@@ -30,8 +27,28 @@ public void setOn(boolean on) {
 	this.on = on;
 }
 //display indicator state to console
-public abstract void display() throws InterruptedException;
 
-	
+public void display() throws InterruptedException {
+	//displays flashing indicator to console
+	if(this.isOn()){
+		int i;
+		//displays indicator 5 times for 500 miliseconds
+		for(i=0;i<5;i++)
+		{
+			this.output();
+			Thread.sleep(500);
+			System.out.print("   \r");
+			Thread.sleep(500);
+		} 
+	} else
+	{
+		System.out.print("indicator off");
+		Thread.sleep(1000);
+		
+	}
+}
+//class for outputting indicator
+public abstract void output();
+
 }
 
